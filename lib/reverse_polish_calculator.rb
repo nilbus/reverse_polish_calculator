@@ -4,5 +4,7 @@ require "reverse_polish_calculator/math_engine"
 require "reverse_polish_calculator/calculator"
 
 module ReversePolishCalculator
-  # Your code goes here...
+  def self.calculate(expression, &block)
+    Calculator.new.calculate(expression, &block)
+  end
 end
