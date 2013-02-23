@@ -1,9 +1,10 @@
+require 'spec_helper'
+
 describe ReversePolishCalculator do
-  it 'should have a version number' do
-    ReversePolishCalculator::VERSION.should_not be_nil
+  it 'delegates to a Calculator instance to do the work' do
   end
 
-  it 'should do something useful' do
-    false.should be_true
+  it 'should have a version number' do
+    ReversePolishCalculator::VERSION.should_not be_nil
   end
 end

@@ -1,0 +1,3 @@
+class ReversePolishCalculator::Operator
+
+end
