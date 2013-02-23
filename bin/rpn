@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
 require 'reverse_polish_calculator'
+
+puts 'fail'
