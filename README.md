@@ -10,6 +10,7 @@ from calculations done using given operators and values.
 
 All methods defined by Ruby's Float class that return a number are valid
 operators, including: `+` `-` `*` `/` `**` `%` `abs` `round` and [more][2].
+Methods that take optional arguments must have values for those arguments.
     
 [1]: http://en.wikipedia.org/wiki/Reverse_Polish_notation
 [2]: http://www.ruby-doc.org/core-1.9.3/Float.html
