@@ -10,15 +10,10 @@ end
 
 describe 'The rpn command line utility' do
   it 'gives the correct output' do
-    run('1 2 +').should == '3.0'
     run("5\n1 2 + 4 * + 3 -").should == "5.0\n14.0"
   end
 
-  it 'does not write to stdout on error (writes to stderr)' do
-    run("+").should be_empty
-  end
-
-  it 'continues with other expressions after an error' do
+  it "continues with subsequent expressions after an error, and doesn't write errors to stdout" do
     run("+\n1").should == '1.0'
   end
 
