@@ -24,5 +24,11 @@ describe ReversePolishCalculator::MathEngine do
       math_engine.stack.size.should == 2
       math_engine.stack.last.should == :result
     end
+
+    it "doesn't modify the stack when there are too few operands" do
+      plus_operator.stub(:operate) { raise ArgumentError }
+      expect { math_engine.process_tokens([9, plus_operator]) }.to raise_error ArgumentError
+      math_engine.stack.should == [9]
+    end
   end
 end

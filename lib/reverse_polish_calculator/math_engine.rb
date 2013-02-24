@@ -16,9 +16,14 @@ module ReversePolishCalculator
           next
         end
         operator = token
-        operands = @stack.pop(token.arity)
-        result = operator.operate(*operands)
-        @stack.push(result)
+        begin
+          operands = @stack.pop(token.arity)
+          result = operator.operate(*operands)
+          @stack.push(result)
+        rescue ArgumentError => e
+          @stack += operands
+          raise e
+        end
       end
     end
   end
