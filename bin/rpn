@@ -1,5 +1,24 @@
 #!/usr/bin/env ruby
-
+$:.unshift(File.expand_path(File.dirname(__FILE__) + '/../lib'))
 require 'reverse_polish_calculator'
 
-puts 'fail'
+def run
+  show_prompt
+  ReversePolishCalculator.calculate $stdin do |stack, error|
+    if !error
+      puts stack.last
+    else
+      $stderr.puts "! #{error}"
+    end
+    show_prompt
+  end
+  puts
+end
+
+def show_prompt
+  return unless $stdin.isatty
+  $stderr.print '> '
+end
+
+running_as_script = (__FILE__ == $0)
+run if running_as_script
