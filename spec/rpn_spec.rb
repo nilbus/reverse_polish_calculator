@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 def run(input)
-  IO.popen('ruby bin/rpn', 'r+') do |stdio|
+  IO.popen('ruby bin/rpn 2> /dev/null', 'r+') do |stdio|
     stdio.write input + "\n"
     stdio.close_write
     return stdio.read.strip

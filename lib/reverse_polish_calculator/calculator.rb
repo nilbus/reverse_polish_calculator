@@ -5,9 +5,10 @@ module ReversePolishCalculator
       @math_engine = MathEngine.new
     end
 
-    def calculate(input, &block)
+    def calculate(input, options = {}, &block)
       input = StringIO.new(input) unless input.respond_to? :readline
       while expression = line_from(input)
+        break if expression.strip == options[:exit_expression]
         begin
           tokens = tokenize(expression)
           @math_engine.process_tokens(tokens)

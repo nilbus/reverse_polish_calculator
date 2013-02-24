@@ -4,7 +4,7 @@ require 'reverse_polish_calculator'
 
 def run
   show_prompt
-  ReversePolishCalculator.calculate $stdin do |stack, error|
+  ReversePolishCalculator.calculate $stdin, :exit_expression => 'q' do |stack, error|
     if !error
       puts stack.last
     else

@@ -32,5 +32,10 @@ describe ReversePolishCalculator::Calculator do
       ReversePolishCalculator::Operator.stub(:new) { raise 'Exception!' }
       expect { |block| calculator.calculate("3 4 +", &block) }.to yield_with_args([anything, 'Exception!'])
     end
+
+    it 'returns when the exit_sequence option is found as a line of input' do
+      ReversePolishCalculator::Operator.should_not_receive(:new)
+      calculator.calculate("abort!\n+", :exit_expression => 'abort!')
+    end
   end
 end
