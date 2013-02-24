@@ -24,10 +24,5 @@ describe ReversePolishCalculator::MathEngine do
       math_engine.stack.size.should == 2
       math_engine.stack.last.should == :result
     end
-
-    it 'raises an ArgumentError if there are not enough operands on the stack to operate on' do
-      expect { math_engine.process_tokens([] << plus_operator) }.to raise_error ArgumentError
-      expect { math_engine.process_tokens([1] << plus_operator) }.to raise_error ArgumentError
-    end
   end
 end
