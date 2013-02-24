@@ -8,10 +8,10 @@ from calculations done using given operators and values.
 
 ## Operators
 
-All methods defined by Ruby's [Float][2] class that return a number are valid
-operators, including: `+` `-` `*` `/` `**` `%` `abs` `round` and more.
+All methods defined by Ruby's Float class that return a number are valid
+operators, including: `+` `-` `*` `/` `**` `%` `abs` `round` and [more][2].
     
-[2]: http://en.wikipedia.org/wiki/Reverse_Polish_notation
+[1]: http://en.wikipedia.org/wiki/Reverse_Polish_notation
 [2]: http://www.ruby-doc.org/core-1.9.3/Float.html
 
 ## Command Line Usage
@@ -30,7 +30,7 @@ values remaining on the stack persist for the next operation.
     4.0
 
     > +
-    ! Not enough values on the stack to perform +
+    ! Not enough operands [4.0] to perform "+"
 
 Finish your session with ^D or q by itself on a line.
 
